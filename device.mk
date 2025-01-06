@@ -43,11 +43,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 $(call soong_config_set_bool,android_hardware_audio,run_64bit,true)
-$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 $(call soong_config_set,qtiaudio,feature_agm_hidl,true)
 $(call soong_config_set,qtiaudio,feature_gef_support,true)
 $(call soong_config_set,qtiaudio,feature_instance_id,true)
 $(call soong_config_set,qtiaudio,feature_pal_hidl,true)
+$(call soong_config_set,qtiaudio,pal_prefer_master_gain,true)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 3216
@@ -358,9 +358,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 
 DEVICE_MANIFEST_FILE := \
     $(LOCAL_PATH)/vintf/manifest_pineapple.xml \
-    $(LOCAL_PATH)/vintf/network_manifest.xml \
-    vendor/qcom/opensource/audio-hal/primary-hal/configs/common/manifest_non_qmaa.xml \
-    vendor/qcom/opensource/audio-hal/primary-hal/configs/common/manifest_non_qmaa_extn.xml
+    $(LOCAL_PATH)/vintf/network_manifest.xml
 
 # Virtualization service
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
