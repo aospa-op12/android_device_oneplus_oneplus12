@@ -20,6 +20,11 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2376
 TARGET_SCREEN_WIDTH := 1080
 
+# Display
+PRODUCT_ODM_PROPERTIES += \
+    ro.surface_flinger.set_idle_timer_ms=60 \
+    ro.surface_flinger.set_touch_timer_ms=120
+
 # DisplayConfig
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display_id_4630946450791512195.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946450791512195.xml
@@ -51,4 +56,4 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/oneplus/sm8650-common/common.mk)
 
 # Inherit from the proprietary files makefile.
-$(call inherit-product, vendor/oneplus/waffle/waffle-vendor.mk)
+$(call inherit-product, vendor/oneplus/oneplus12/oneplus12-vendor.mk)

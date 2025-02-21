@@ -7,7 +7,7 @@
 # Include the common OEM chipset BoardConfig.
 include device/oneplus/sm8650-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/oneplus/waffle
+DEVICE_PATH := device/oneplus/oneplus12
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := OP5929L1|OP595DL1
@@ -16,7 +16,7 @@ TARGET_OTA_ASSERT_DEVICE := OP5929L1|OP595DL1
 TARGET_CHARGE_RATE_MULTIPLIER := 2000
 
 # Camera
-TARGET_CAMERA_SERVICE_EXT_LIB := //$(DEVICE_PATH):libcameraservice_extension.waffle
+TARGET_CAMERA_SERVICE_EXT_LIB := //$(DEVICE_PATH):libcameraservice_extension.oneplus12
 
 # Display
 TARGET_SCREEN_DENSITY := 640
@@ -69,4 +69,4 @@ SOONG_CONFIG_OPLUS_LINEAGE_VIBRATOR_HAL_MED_MAG := 0x7ffe
 SOONG_CONFIG_OPLUS_LINEAGE_VIBRATOR_HAL_STRONG_MAG := 0xaffe
 
 # Include the proprietary files BoardConfig.
-include vendor/oneplus/waffle/BoardConfigVendor.mk
+include vendor/oneplus/oneplus12/BoardConfigVendor.mk

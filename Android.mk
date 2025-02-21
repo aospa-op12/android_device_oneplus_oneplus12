@@ -5,7 +5,7 @@
 #
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),waffle)
+ifeq ($(TARGET_DEVICE),oneplus12)
 
 include $(CLEAR_VARS)
 
