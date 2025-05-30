@@ -22,8 +22,8 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Display
 PRODUCT_ODM_PROPERTIES += \
-    ro.surface_flinger.set_idle_timer_ms=60 \
-    ro.surface_flinger.set_touch_timer_ms=120
+    ro.surface_flinger.set_idle_timer_ms=80 \
+    ro.surface_flinger.set_touch_timer_ms=200
 
 # DisplayConfig
 PRODUCT_COPY_FILES += \
