@@ -179,6 +179,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
 
+$(call inherit-product-if-exists, vendor/oneplus/ir/ir.mk)
+
 # Kernel
 KERNEL_PREBUILT_DIR := device/oneplus/oneplus12-kernel
 PRODUCT_ENABLE_UFFD_GC := true
@@ -322,7 +324,8 @@ PRODUCT_SHIPPING_API_LEVEL += $(BOARD_SHIPPING_API_LEVEL)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/oplus
+    hardware/oplus \
+    vendor/oneplus/ir
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
