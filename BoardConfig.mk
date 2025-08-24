@@ -12,9 +12,6 @@ DEVICE_PATH := device/oneplus/oneplus12
 # Assert
 TARGET_OTA_ASSERT_DEVICE := OP5929L1|OP595DL1
 
-# Charging
-TARGET_CHARGE_RATE_MULTIPLIER := 2000
-
 # Camera
 TARGET_CAMERA_SERVICE_EXT_LIB := //$(DEVICE_PATH):libcameraservice_extension.oneplus12
 
