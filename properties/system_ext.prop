@@ -1,3 +1,6 @@
+# ALS
+vendor.sensors.als_correction.grabrect=1010 150 1045 190
+
 # Audio
 qcom.hw.aac.encoder=true
 ro.audio.asyncdump.support=1
