@@ -379,7 +379,7 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(r'(<Name>GamePowerOptFeature</Name>\s*<Enable>)0(<\/Enable>)', r'\g<1>1\g<2>'),
     'vendor/etc/sensors/hals.conf': blob_fixup()
         .add_line_if_missing('sensors.oplus.so')
-        .regex_replace('sensors.qsh.so', 'sensors.wrapper.so'),
+        .regex_replace('sensors.qsh.so', 'sensors.fusionlight.so'),
     'vendor/lib64/libcamera2ndk_vendor.so': blob_fixup()
         .replace_needed('android.frameworks.cameraservice.device-V1-ndk.so', 'android.frameworks.cameraservice.device-V3-ndk.so')
         .replace_needed('android.frameworks.cameraservice.service-V1-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so'),
