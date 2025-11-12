@@ -3447,6 +3447,7 @@ vendor/lib64/sensors.qsh.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate-V1-ndk.so
 
 # Sensors config
+my_product/etc/fusionlight_profile/fusionlight_Main_1_3.json:odm/etc/fusionlight_profile/fusionlight_Main_1_3.json
 odm/etc/sensor/config/json_list
 odm/etc/sensor/config/lanai_mtp_ak09919.json
 odm/etc/sensor/config/lanai_mtp_alsps.json
