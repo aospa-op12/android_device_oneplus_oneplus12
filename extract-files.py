@@ -266,7 +266,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/pwr/PowerFeatureConfig.xml': blob_fixup()
         .regex_replace(r'(<Name>GamePowerOptFeature</Name>\s*<Enable>)0(<\/Enable>)', r'\g<1>1\g<2>'),
     'vendor/etc/sensors/hals.conf': blob_fixup()
-        .add_line_if_missing('sensors.oplus.so'),
+        .add_line_if_missing('sensors.oplus.so')
+        .regex_replace('sensors.qsh.so', 'sensors.wrapper.so'),
     'vendor/lib64/libcwb_qcom_aidl.so': blob_fixup()
         .add_needed('libui_shim.so'),
     (
