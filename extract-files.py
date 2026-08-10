@@ -117,6 +117,9 @@ def set_video_4k120fps_max_zoom_list(ctx, file, file_path, *args, **kwargs):
 def set_video_dv_120fps_support(ctx, file, file_path, *args, **kwargs):
     update_vendor_tag(ctx, file, file_path, "com.oplus.feature.video.dv.120fps.support", "1")
 
+def set_camera_capture_hdr_support(ctx, file, file_path, *args, **kwargs):
+    update_vendor_tag(ctx, file, file_path, "com.oplus.camera.capture.hdr.support", "1")
+
 def lib_fixup_odm_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'odm' else None
 
@@ -276,7 +279,8 @@ blob_fixups: blob_fixups_user_type = {
         .call(set_video_4k_120fps_support)
         .call(set_video_4k_120fps_zoom_range)
         .call(set_video_4k120fps_max_zoom_list)
-        .call(set_video_dv_120fps_support),
+        .call(set_video_dv_120fps_support)
+        .call(set_camera_capture_hdr_support),
     'odm/etc/gps.conf': blob_fixup()
         .binary_regex_replace(b'com.oplus.locationproxy', b'com.google.android.carrierlocation')
         .binary_regex_replace(b'DEBUG_LEVEL = 3', b'DEBUG_LEVEL = 2'),
