@@ -7,5 +7,5 @@
           package="com.android.se.overlay.target">
     <overlay android:targetPackage="com.android.se"
              android:isStatic="true"
-             android:priority="500" />
+             android:priority="800" />
 </manifest>
