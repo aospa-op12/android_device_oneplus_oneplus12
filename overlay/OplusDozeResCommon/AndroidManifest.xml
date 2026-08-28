@@ -7,5 +7,5 @@
           package="org.lineageos.settings.doze.overlay">
     <overlay android:targetPackage="org.lineageos.settings.doze"
              android:isStatic="true"
-             android:priority="300" />
+             android:priority="800" />
 </manifest>

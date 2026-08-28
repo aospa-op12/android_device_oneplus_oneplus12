@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "FrameworksResTargetPhone",
-    vendor: true,
+    name: "ApertureResTarget",
+    system_ext_specific: true,
 }
