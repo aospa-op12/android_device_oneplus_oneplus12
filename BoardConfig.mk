@@ -52,6 +52,9 @@ SOONG_CONFIG_ufsbsg_ufsframework := bsg
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := pineapple
 
+# Charging
+TARGET_POWERSHARE_NODE := /proc/wireless/enable_tx
+
 # Display
 TARGET_SCREEN_DENSITY := 640
 
