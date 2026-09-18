@@ -38,6 +38,7 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.pineapple
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple_qssi/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
@@ -95,6 +96,9 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set_bool,qtidisplay,oplus_udfps,true)
 $(call soong_config_set_bool,qtidisplay,pxlw_hw_iris7,true)
 $(call soong_config_set,qtidisplay,pxlw_vendor_namespace,vendor/oneplus/oneplus12)
+
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -191,6 +195,10 @@ PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/oplus_chg/battery/mmi_charging_enable)
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_codecs_pineapple_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_pineapple_vendor.xml
 
 # Memtrack
 PRODUCT_PACKAGES += \

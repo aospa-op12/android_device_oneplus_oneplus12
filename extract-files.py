@@ -357,7 +357,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/media_codecs_cliffs_v0.xml',
         'vendor/etc/media_codecs_cliffs_v1.xml',
         'vendor/etc/media_codecs_pineapple.xml',
-        'vendor/etc/media_codecs_pineapple_vendor.xml',
     ): blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
     'vendor/etc/init/nicmd.rc': blob_fixup()
@@ -372,39 +371,6 @@ blob_fixups: blob_fixups_user_type = {
         ),
     'vendor/etc/libnfc-nci.conf': blob_fixup()
         .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
-    'vendor/etc/media_codecs_pineapple_vendor.xml': blob_fixup()
-        #FIX HDR ENCODER
-        .regex_replace(
-            r'<!--\s*<MediaCodec name="c2\.qti\.dv\.encoder" type="video/dolby-vision">',
-            r'<MediaCodec name="c2.qti.dv.encoder" type="video/dolby-vision">'
-        )
-        .regex_replace(
-            r'(<Limit name="performance-point-7680x4320" value="30" />\s*)</MediaCodec>\s*-->',
-            r'\1    <Feature name="profile-and-level" value="256-8" />\n'
-            r'            <Feature name="profile-and-level" value="256-256" />\n'
-            r'            <Feature name="profile-and-level" value="256-1024" />\n'
-            r'        </MediaCodec>'
-        )
-        #FIX HDR DECODER
-        .regex_replace(
-            r'<!--\s*<MediaCodec name="c2\.qti\.dv\.decoder" type="video/dolby-vision" >',
-            r'<MediaCodec name="c2.qti.dv.decoder" type="video/dolby-vision" >'
-        )
-        .regex_replace(
-            r'(<Limit name="performance-point-8192x4320" value="48" />\s*)</MediaCodec>',
-            r'\1    <Feature name="profile-and-level" value="256-8" />\n'
-            r'            <Feature name="profile-and-level" value="256-256" />\n'
-            r'            <Feature name="profile-and-level" value="256-1024" />\n'
-            r'        </MediaCodec>'
-        )
-        #FIX HDR DECODER SECURE
-        .regex_replace(
-            r'(<Limit name="performance-point-4096x2304" value="120" />\s*)</MediaCodec>\s*-->',
-            r'\1    <Feature name="profile-and-level" value="256-8" />\n'
-            r'            <Feature name="profile-and-level" value="256-256" />\n'
-            r'            <Feature name="profile-and-level" value="256-1024" />\n'
-            r'        </MediaCodec>'
-        ),
     'vendor/etc/pwr/PowerFeatureConfig.xml': blob_fixup()
         .regex_replace(r'(<Name>GamePowerOptFeature</Name>\s*<Enable>)0(<\/Enable>)', r'\g<1>1\g<2>'),
     'vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy': blob_fixup()
