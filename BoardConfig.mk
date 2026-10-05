@@ -132,6 +132,7 @@ BOOT_SECURITY_PATCH := 2026-07-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy
+include hardware/oplus/sepolicy/common/SEPolicy.mk
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
 # Verified Boot
