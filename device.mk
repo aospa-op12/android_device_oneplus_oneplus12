@@ -337,6 +337,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
 
+# Touch
+PRODUCT_PACKAGES += \
+    touchDaemon \
+    vendor.oplus.hardware.touch@2.0-service
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \

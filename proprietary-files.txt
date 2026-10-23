@@ -3609,13 +3609,6 @@ vendor/lib64/libcpion.so
 vendor/lib64/libsi.so
 vendor/lib64/libtrustedapploader.so
 
-# Touch
-odm/bin/hw/vendor-oplus-hardware-touch-V2-service
-odm/bin/touchDaemon
-odm/etc/init/init.touchDaemon.rc
-odm/etc/init/vendor-oplus-hardware-touch-V2-service.rc
-odm/etc/vintf/manifest/manifest_touch_aidl.xml
-
 # Touchscreen firmware
 odm/firmware/tp/22825/FW_S3910_BOE.img
 odm/firmware/tp/22825/FW_S3910_BOE_FAE.img
