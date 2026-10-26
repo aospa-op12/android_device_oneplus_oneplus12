@@ -95,6 +95,7 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set_bool,qtidisplay,oplus_udfps,true)
 $(call soong_config_set_bool,qtidisplay,pxlw_hw_iris7,true)
 $(call soong_config_set,qtidisplay,pxlw_vendor_namespace,vendor/oneplus/oneplus12)
+$(call soong_config_set,qtidisplay,pxlw_color_config_include,$(LOCAL_PATH)/display/include)
 
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
