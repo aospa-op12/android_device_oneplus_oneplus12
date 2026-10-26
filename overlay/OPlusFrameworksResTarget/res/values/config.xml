@@ -38,9 +38,9 @@
         <item>307</item>
     </integer-array>
     <integer-array name="config_displayCompositionColorSpaces">
-        <item>7</item> <!-- COLOR_MODE_SRGB -->
-        <item>7</item> <!-- COLOR_MODE_SRGB -->
-        <item>7</item> <!-- COLOR_MODE_SRGB -->
+        <item>0</item> <!-- COLOR_MODE_DEFAULT -->
+        <item>0</item> <!-- COLOR_MODE_DEFAULT -->
+        <item>0</item> <!-- COLOR_MODE_DEFAULT -->
     </integer-array>
 
     <!-- Minimum screen brightness setting allowed by power manager.
