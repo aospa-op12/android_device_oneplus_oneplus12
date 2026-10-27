@@ -43,4 +43,7 @@
 
     <!-- The radius of the enrollment progress bar, in dp -->
     <integer name="config_udfpsEnrollProgressBar" translatable="false">119</integer>
+
+    <!-- Show edge grip suppression width -->
+    <bool name="config_supportEdgeGripSuppression">true</bool>
 </resources>
