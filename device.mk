@@ -47,6 +47,7 @@ $(call soong_config_set,qtiaudio,feature_agm_hidl,true)
 $(call soong_config_set,qtiaudio,feature_gef_support,true)
 $(call soong_config_set,qtiaudio,feature_instance_id,true)
 $(call soong_config_set,qtiaudio,feature_pal_hidl,true)
+$(call soong_config_set,qtiaudio,lvacfs_headers,//device/oneplus/oneplus12:liblvacfs_device_headers)
 $(call soong_config_set,qtiaudio,pal_prefer_master_gain,true)
 
 # Boot animation
