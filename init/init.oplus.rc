@@ -13,6 +13,16 @@ on boot
     # Display
     chmod 0000 /sys/kernel/oplus_display/hbm
 
+    # TFA98xx calibration sysfs
+    chown audioserver audio /sys/bus/i2c/devices/4-0034/reg
+    chmod 0660 /sys/bus/i2c/devices/4-0034/reg
+    chown audioserver audio /sys/bus/i2c/devices/4-0034/rw
+    chmod 0660 /sys/bus/i2c/devices/4-0034/rw
+    chown audioserver audio /sys/bus/i2c/devices/4-0035/reg
+    chmod 0660 /sys/bus/i2c/devices/4-0035/reg
+    chown audioserver audio /sys/bus/i2c/devices/4-0035/rw
+    chmod 0660 /sys/bus/i2c/devices/4-0035/rw
+
 on post-fs-data
     # ADSP ramdump
     mkdir /data/vendor/mmdump 0777 system system
@@ -40,6 +50,12 @@ on post-fs-data
     mkdir /data/system/camera_rus 0777 cameraserver  cameraserver
     chown system system /sys/kernel/ois_control/dump_registers
 
+    # Audio calibration
+    mkdir /mnt/vendor/persist/media 0770 audioserver audio
+    chown audioserver audio /mnt/vendor/persist/media
+    chmod 0770 /mnt/vendor/persist/media
+    restorecon /mnt/vendor/persist/media
+
 on boot
     chown system system /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/double_tap_pressed
     chmod 0660 /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/double_tap_pressed
@@ -57,6 +73,16 @@ on property:ro.boot.prjname=*
     setprop ro.separate.soft ${ro.boot.prjname}
 
 on property:sys.boot_completed=1
+    # Re-apply TFA98xx sysfs permissions in case the driver probed late
+    chown audioserver audio /sys/bus/i2c/devices/4-0034/reg
+    chmod 0660 /sys/bus/i2c/devices/4-0034/reg
+    chown audioserver audio /sys/bus/i2c/devices/4-0034/rw
+    chmod 0660 /sys/bus/i2c/devices/4-0034/rw
+    chown audioserver audio /sys/bus/i2c/devices/4-0035/reg
+    chmod 0660 /sys/bus/i2c/devices/4-0035/reg
+    chown audioserver audio /sys/bus/i2c/devices/4-0035/rw
+    chmod 0660 /sys/bus/i2c/devices/4-0035/rw
+
     # Network
     copy /vendor/etc/O_STX_platform_license.pfm /mnt/vendor/persist/data/pfm/licenses/O_STX_platform_license.pfm
     chmod 0600 /mnt/vendor/persist/data/pfm/licenses/O_STX_platform_license.pfm
